@@ -1,6 +1,6 @@
-Practising UI testing on the DuckDuckGo search engine using Python.
+Practising UI testing on the DuckDuckGo search engine using Python, pytest and Selenium WebDriver.
 
-Status of the Project: [Here]() (LINK TO BE ADDED)
+Status of the Project: [Here](https://github.com/users/dorine-delieuvin/projects/4)
 
 Link to [DuckDuckGo Home Page](https://duckduckgo.com/)
 
