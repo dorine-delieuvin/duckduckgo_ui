@@ -16,7 +16,7 @@ import pytest
 
 @pytest.mark.parametrize(
     "word, word_to_avoid",
-    [("python", "snake"), ("python", "programming"), ("selenium", "testing")],
+    [("python", "snake"), ("python", "programming"), ("selenium", "testing tools")],
 )
 # Senario: search for "word" using the "-" advanced search operator
 def test_duckduckgo_search_with_minus_operator(browser, word, word_to_avoid):
@@ -46,5 +46,3 @@ def test_duckduckgo_search_with_minus_operator(browser, word, word_to_avoid):
 
     # AND the search result snipets do not contain "word_to_avoid"
     assert word_to_avoid not in result_page.result_snipets()
-
-    # return Exception("Test not fully developed")
