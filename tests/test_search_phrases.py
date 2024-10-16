@@ -47,4 +47,4 @@ def test_duckduckgo_search_with_minus_operator(browser, word, word_to_avoid):
     # AND the search result snipets do not contain "word_to_avoid"
     assert word_to_avoid not in result_page.result_snipets()
 
-    return Exception("Test not fully developed")
+    # return Exception("Test not fully developed")
