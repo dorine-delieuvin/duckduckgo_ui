@@ -1,4 +1,7 @@
 """
+Test case developed during the
+Test Automation University course:
+
 Testing DuckDuckGo searches
 using Pytest
 """
@@ -12,10 +15,6 @@ using Pytest
 from pages.result import DuckDuckGoResultPage
 from pages.search import DuckDuckGoSearchPage
 import pytest
-from selenium import webdriver
-
-options = webdriver.ChromeOptions()
-options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
 
 @pytest.mark.parametrize("phrase", ["panda", "python", "polar bear"])
