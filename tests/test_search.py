@@ -39,6 +39,3 @@ def test_basic_duckduckgo_search(browser, phrase):
 
     # AND the search result contains "panda"
     assert phrase in result_page.title()
-
-
-print("testing some more stuff")
