@@ -80,4 +80,4 @@ def test_duckduckgo_search_with_apostrophes_operator(browser, word, must_have_wo
     assert len(matches) > 0
 
     # AND the search result contains "must_have_word"
-    assert phrase in result_page.title()
+    assert must_have_word in result_page.title()
