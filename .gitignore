@@ -107,4 +107,4 @@ venv.bak/
 .vscode
 .idea
 *.iml
-.code-workspace
+*.code-workspace
