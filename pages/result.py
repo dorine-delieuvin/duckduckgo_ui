@@ -10,7 +10,7 @@ class DuckDuckGoResultPage:
 
     # Locators
     RESULT_LINKS = (By.CSS_SELECTOR, "a.LQNqh2U1kzYxREs65IJu")
-    RESULT_SNIPETS = (By.CSS_SELECTOR, "span.kY2IgmnCmOGjharHErah")
+    RESULT_SNIPETS = (By.CSS_SELECTOR, "div.OgdwYG6KE2qthn9XQWFC")
     SEARCH_INPUT = (By.ID, "search_form_input")
 
     # Initializer

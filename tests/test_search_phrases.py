@@ -12,6 +12,7 @@ using Pytest
 from pages.result import DuckDuckGoResultPage
 from pages.search import DuckDuckGoSearchPage
 import pytest
+import re
 
 
 ## Tests Setup/Cleanup
@@ -33,7 +34,7 @@ def test_duckduckgo_search_with_minus_operator(browser, word, word_to_avoid):
     result_page = DuckDuckGoResultPage(browser)
 
     # WHEN the user searches for "word -word_to_avoid"
-    phrase = word + " -" + word_to_avoid
+    phrase = word + ' -"' + word_to_avoid + '"'
     search_page.search(phrase)
 
     # THEN the search result query is "word -word_to_avoid"
@@ -51,7 +52,8 @@ def test_duckduckgo_search_with_minus_operator(browser, word, word_to_avoid):
     assert word_to_avoid not in result_page.result_link_titles()
 
     # AND the search result snipets do not contain "word_to_avoid"
-    assert word_to_avoid not in result_page.result_snipets()
+    for snipet in result_page.result_snipets():
+        assert word_to_avoid.lower() not in snipet.lower()
 
 
 @pytest.mark.parametrize(
@@ -79,5 +81,9 @@ def test_duckduckgo_search_with_apostrophes_operator(browser, word, must_have_wo
     matches = [t for t in titles if must_have_word.lower() in t.lower()]
     assert len(matches) > 0
 
-    # AND the search result contains "must_have_word"
-    assert must_have_word in result_page.title()
+    # AND the search result contains 'phrase with "must_have_word"'
+    assert phrase in result_page.title()
+
+    # AND the search result snipets contains "must_have_word"
+    for snipet in result_page.result_snipets():
+        assert must_have_word.lower() in snipet.lower()
